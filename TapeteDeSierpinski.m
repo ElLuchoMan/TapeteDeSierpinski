@@ -10,3 +10,7 @@ for i = 1: n - 1
     f{i+1} = T(f{i});
     figure,imshow(f{i + 1});
 end
+%Matriz para guardar el estado actual
+function A = M(K)
+    A = [K 0 0; 0 K 0; 0 0 1];
+end  
