@@ -7,7 +7,7 @@ f{1} = ones(300 * n );%tamaño del panel
 figure,imshow(f{1}); %Imprime en pantalla cada uno de los estados generados
 %Permite realizar cada estado
 for i = 1: n - 1
-    f{i+1} = T(f{i});
+    f{i+1} = T(f{i});%Realiza la transformación de cada estado
     figure,imshow(f{i + 1});
 end
 %Matriz para guardar el estado actual
