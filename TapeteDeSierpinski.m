@@ -14,3 +14,12 @@ end
 function A = M(K)
     A = [K 0 0; 0 K 0; 0 0 1];
 end  
+%Transformación
+function mf = T(X)
+    b = size(X);% Se toma el tamaño del panel 
+    C = M(1/6);%Se define a cuántas partes del total, será equivalente la casilla
+    [C,ref] = imwarp(X,affine2d(C));%Se hace uso de affine 2d para la transformación
+    %Se indica cuáles de las casillas se van a eliminar y cuáles
+    %permanecerán iguales
+    mf = [C C C C C C; C C zeros(b(1)/6) C C C; C zeros(b(1)/6) C C C C; C C zeros(b(1)/6) C C C; C C C C C C; C C C C C C];
+end
